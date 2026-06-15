@@ -1,68 +1,91 @@
 'use client';
 
-import { useSession } from 'next-auth/react'; // v5 compatible
-import { usePathname } from 'next/navigation';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { BoxArrowRight, Lock, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { useSession } from 'next-auth/react';
 
-const NavBar: React.FC = () => {
-  const { data: session, status } = useSession();
-  const pathName = usePathname();
-  if (status === 'loading') return null;
-  const currentUser = session?.user?.email;
-  const role = session?.user?.role;
+const navLinks = [
+  { label: 'Our Story', href: '/#our-story' },
+  { label: 'Events', href: '/#events' },
+  { label: 'Travel', href: '/#travel' },
+];
+
+export default function NavBar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const { data: session } = useSession();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="/">Next.js Application Template</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-start">
-            {currentUser && (
-              <>
-                <Nav.Link id="add-stuff-nav" href="/add" active={pathName === '/add'}>
-                  Add Stuff
-                </Nav.Link>
-                <Nav.Link id="list-stuff-nav" href="/list" active={pathName === '/list'}>
-                  List Stuff
-                </Nav.Link>
-              </>
-            )}
-            {currentUser && role === 'ADMIN' && (
-              <Nav.Link id="admin-stuff-nav" href="/admin" active={pathName === '/admin'}>
-                Admin
-              </Nav.Link>
-            )}
-          </Nav>
-          <Nav>
-            {session ? (
-              <NavDropdown id="login-dropdown" title={currentUser}>
-                <NavDropdown.Item id="login-dropdown-sign-out" href="/api/auth/signout">
-                  <BoxArrowRight />
-                  Sign Out
-                </NavDropdown.Item>
-                <NavDropdown.Item id="login-dropdown-change-password" href="/auth/change-password">
-                  <Lock />
-                  Change Password
-                </NavDropdown.Item>
-              </NavDropdown>
-            ) : (
-              <NavDropdown id="login-dropdown" title="Login">
-                <NavDropdown.Item id="login-dropdown-sign-in" href="/auth/signin">
-                  <PersonFill />
-                  Sign in
-                </NavDropdown.Item>
-                <NavDropdown.Item id="login-dropdown-sign-up" href="/auth/signup">
-                  <PersonPlusFill />
-                  Sign up
-                </NavDropdown.Item>
-              </NavDropdown>
-            )}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-};
+    <nav className={`wedding-nav ${scrolled ? 'scrolled' : 'transparent'}`}>
+      <div className="container d-flex align-items-center justify-content-between">
+        <Link href="/" className="nav-brand">
+          J &amp; A
+        </Link>
 
-export default NavBar;
+        {/* Desktop links */}
+        <div className="d-none d-md-flex align-items-center gap-1">
+          {navLinks.map((l) => (
+            <a key={l.href} href={l.href} className="nav-link-wedding">
+              {l.label}
+            </a>
+          ))}
+          {session?.user?.role === 'ADMIN' && (
+            <a href="/admin" className="nav-link-wedding">
+              Admin
+            </a>
+          )}
+          <Link href="/rsvp" className="nav-rsvp-btn ms-3">
+            RSVP
+          </Link>
+        </div>
+
+        {/* Mobile toggle */}
+        <button
+          className="d-md-none"
+          style={{ background: 'none', border: 'none', color: 'var(--color-gold)', fontSize: '1.5rem' }}
+          onClick={() => setOpen((o) => !o)}
+          aria-label="Toggle menu"
+        >
+          {open ? '✕' : '☰'}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div
+          className="d-md-none"
+          style={{
+            background: 'rgba(13,27,42,0.98)',
+            borderTop: '1px solid rgba(201,168,76,0.2)',
+            padding: '1.5rem',
+          }}
+        >
+          {navLinks.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="nav-link-wedding d-block mb-2"
+              onClick={() => setOpen(false)}
+            >
+              {l.label}
+            </a>
+          ))}
+          {session?.user?.role === 'ADMIN' && (
+            <a href="/admin" className="nav-link-wedding d-block mb-2" onClick={() => setOpen(false)}>
+              Admin
+            </a>
+          )}
+          <Link href="/rsvp" className="nav-rsvp-btn mt-3 text-center d-block" onClick={() => setOpen(false)}>
+            RSVP
+          </Link>
+        </div>
+      )}
+    </nav>
+  );
+}

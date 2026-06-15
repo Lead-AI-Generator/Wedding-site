@@ -1,14 +1,826 @@
-html,
-body {
-  --bs-light-rgb: 236, 236, 236;
+/* ─── Design Tokens ─────────────────────────────────────────────────────── */
+:root {
+  --color-midnight: #0D1B2A;
+  --color-midnight-light: #162033;
+  --color-gold: #C9A84C;
+  --color-gold-dark: #8B6914;
+  --color-gold-light: #E2C97E;
+  --color-ivory: #FAF7F2;
+  --color-ivory-dark: #F0EAE0;
+  --color-cream-text: #F5E6D3;
+  --color-dark-text: #2A1A0E;
+  --color-champagne: #E8D5B0;
+  --color-muted: #9E8E7A;
+
+  --font-display: var(--font-cinzel), 'Cinzel', serif;
+  --font-heading: var(--font-cormorant), 'Cormorant Garamond', serif;
+  --font-body: var(--font-montserrat), 'Montserrat', sans-serif;
+
+  --section-pad: 5rem 0;
+  --transition: 0.3s ease;
+}
+
+/* ─── Reset & Base ───────────────────────────────────────────────────────── */
+html, body {
   box-sizing: border-box;
   height: 100%;
   padding: 0;
   margin: 0;
+  background-color: var(--color-midnight);
+  color: var(--color-cream-text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
 }
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 .wrapper {
   box-sizing: border-box;
   min-height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ─── Typography ─────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.display-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.section-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.gold-text { color: var(--color-gold); }
+.cream-text { color: var(--color-cream-text); }
+.muted-text { color: var(--color-muted); }
+
+/* ─── Section Utilities ──────────────────────────────────────────────────── */
+.section-dark {
+  background-color: var(--color-midnight);
+  color: var(--color-cream-text);
+  padding: var(--section-pad);
+}
+
+.section-light {
+  background-color: var(--color-ivory);
+  color: var(--color-dark-text);
+  padding: var(--section-pad);
+}
+
+.section-mid {
+  background-color: var(--color-midnight-light);
+  color: var(--color-cream-text);
+  padding: var(--section-pad);
+}
+
+.gold-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 1.5rem auto;
+}
+
+/* ─── Hero Section ───────────────────────────────────────────────────────── */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-midnight);
+  overflow: hidden;
+}
+
+.stars-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-ampersand {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--color-gold);
+  font-style: italic;
+  display: block;
+  line-height: 1;
+}
+
+.hero-names {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  color: var(--color-cream-text);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.hero-date {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 1.5rem;
+}
+
+.gold-border-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--color-gold), transparent);
+  margin: 1.5rem auto;
+}
+
+/* Countdown */
+.countdown-wrap {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.countdown-unit {
+  text-align: center;
+}
+
+.countdown-number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--color-cream-text);
+  display: block;
+  line-height: 1;
+}
+
+.countdown-label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* Scroll chevron */
+.scroll-chevron {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: var(--color-gold);
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ─── Navbar ─────────────────────────────────────────────────────────────── */
+.wedding-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+  padding: 1.25rem 0;
+}
+
+.wedding-nav.scrolled {
+  background: rgba(13, 27, 42, 0.97) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(201, 168, 76, 0.2);
+  padding: 0.75rem 0;
+}
+
+.wedding-nav.transparent {
+  background: transparent !important;
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  color: var(--color-gold) !important;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-link-wedding {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-cream-text) !important;
+  transition: color var(--transition);
+  padding: 0.5rem 1rem !important;
+  text-decoration: none;
+}
+
+.nav-link-wedding:hover {
+  color: var(--color-gold) !important;
+}
+
+.nav-rsvp-btn {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-midnight) !important;
+  background: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  padding: 0.45rem 1.25rem !important;
+  transition: background var(--transition), color var(--transition);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.nav-rsvp-btn:hover {
+  background: var(--color-gold-dark);
+  border-color: var(--color-gold-dark);
+  color: var(--color-cream-text) !important;
+}
+
+/* ─── Our Story Section ──────────────────────────────────────────────────── */
+.story-timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.story-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--color-gold) 10%, var(--color-gold) 90%, transparent);
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .story-timeline::before {
+    left: 1.25rem;
+  }
+}
+
+/* Mobile dot: use ::before on the content card since dot-col is hidden */
+@media (max-width: 768px) {
+  .story-content::before {
+    content: '';
+    position: absolute;
+    left: -2.25rem;
+    top: 1.75rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    border: 3px solid var(--color-midnight);
+  }
+
+  .story-content {
+    position: relative;
+  }
+}
+
+.story-card {
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.story-card.right {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .story-card, .story-card.right {
+    flex-direction: column;
+    padding-left: 3.5rem;
+    gap: 1.5rem;
+  }
+}
+
+/* Center column that holds the dot — stays at 50% because both sides are flex:1 */
+.story-dot-col {
+  flex-shrink: 0;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .story-dot-col {
+    display: none;
+  }
+}
+
+.story-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 3px solid var(--color-midnight);
+  flex-shrink: 0;
+}
+
+.story-content {
+  flex: 1;
+  min-width: 0;
+  background: var(--color-midnight-light);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 2rem;
+  transition: border-color var(--transition);
+}
+
+.story-content:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
+.story-photo {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .story-photo {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.story-photo img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  display: block;
+}
+
+.story-photo-placeholder {
+  width: 100%;
+  height: 280px;
+  background: var(--color-midnight-light);
+  border: 1px dashed rgba(201, 168, 76, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.story-city {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.story-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--color-cream-text);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.story-body {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-champagne);
+}
+
+/* ─── Events Section ─────────────────────────────────────────────────────── */
+.event-card {
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  background: var(--color-midnight-light);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: border-color var(--transition), transform var(--transition);
+  height: 100%;
+}
+
+.event-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-4px);
+}
+
+.event-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: var(--color-gold);
+}
+
+.event-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.event-date {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-cream-text);
+  margin-bottom: 0.25rem;
+}
+
+.event-time {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.event-venue {
+  font-size: 0.88rem;
+  color: var(--color-champagne);
+  line-height: 1.6;
+}
+
+.event-note {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* ─── Travel Section ─────────────────────────────────────────────────────── */
+.travel-card {
+  background: var(--color-midnight);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 2rem;
+  height: 100%;
+}
+
+.travel-card h5 {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.travel-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+.travel-item:last-child {
+  border-bottom: none;
+}
+
+.travel-item-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-cream-text);
+  margin-bottom: 0.3rem;
+}
+
+.travel-item-desc {
+  font-size: 0.85rem;
+  color: var(--color-champagne);
+  line-height: 1.7;
+}
+
+.travel-item-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.travel-item-link:hover {
+  border-bottom-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* ─── RSVP Section ───────────────────────────────────────────────────────── */
+.rsvp-page {
+  min-height: 100vh;
+  background-color: var(--color-midnight);
+  padding: 8rem 0 5rem;
+}
+
+.rsvp-form-wrap {
+  background: var(--color-midnight-light);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 3rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .rsvp-form-wrap {
+    padding: 2rem 1.25rem;
+  }
+}
+
+.form-label-wedding {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-control-wedding {
+  background: var(--color-midnight) !important;
+  border: 1px solid rgba(201, 168, 76, 0.3) !important;
+  color: var(--color-cream-text) !important;
+  border-radius: 0 !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.9rem !important;
+  padding: 0.75rem 1rem !important;
+  transition: border-color var(--transition) !important;
+}
+
+.form-control-wedding:focus {
+  border-color: var(--color-gold) !important;
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.15) !important;
+  outline: none !important;
+}
+
+.form-control-wedding::placeholder {
+  color: var(--color-muted) !important;
+}
+
+.form-check-wedding {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.form-check-wedding:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+}
+
+.form-check-wedding input[type="checkbox"],
+.form-check-wedding input[type="radio"] {
+  accent-color: var(--color-gold);
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.form-check-wedding label {
+  font-size: 0.875rem;
+  color: var(--color-champagne);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.form-error {
+  font-size: 0.75rem;
+  color: #e07070;
+  margin-top: 0.35rem;
+  display: block;
+}
+
+.btn-gold {
+  background: var(--color-gold);
+  color: var(--color-midnight);
+  border: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  width: 100%;
+  display: block;
+  border-radius: 0;
+}
+
+.btn-gold:hover {
+  background: var(--color-gold-dark);
+  color: var(--color-cream-text);
+}
+
+.btn-gold:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 0;
+}
+
+.btn-outline-gold:hover {
+  background: var(--color-gold);
+  color: var(--color-midnight);
+}
+
+/* ─── Admin / Table ───────────────────────────────────────────────────────── */
+.admin-page {
+  min-height: 100vh;
+  background-color: var(--color-midnight);
+  padding: 8rem 0 4rem;
+  color: var(--color-cream-text);
+}
+
+.stat-card {
+  background: var(--color-midnight-light);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 1.5rem;
+  text-align: center;
+  height: 100%;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  display: block;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.rsvp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.rsvp-table th {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.rsvp-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--color-champagne);
+  vertical-align: top;
+}
+
+.rsvp-table tr:hover td {
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.badge-side {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0;
+  font-weight: 400;
+}
+
+.badge-bride {
+  background: rgba(201, 168, 76, 0.15);
+  color: var(--color-gold);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+}
+
+.badge-groom {
+  background: rgba(245, 230, 211, 0.1);
+  color: var(--color-cream-text);
+  border: 1px solid rgba(245, 230, 211, 0.3);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+.wedding-footer {
+  background: var(--color-midnight);
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.footer-names {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+}
+
+.footer-date {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+}
+
+/* ─── Utility ────────────────────────────────────────────────────────────── */
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Override Bootstrap form controls to match theme */
+.form-control:focus {
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.2) !important;
+}
+
+/* Fix Bootstrap navbar toggler on dark bg */
+.navbar-toggler-icon {
+  filter: invert(1);
 }
