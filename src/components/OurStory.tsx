@@ -39,11 +39,11 @@ const entries: StoryEntry[] = [
     flip: true,
   },
   {
-    city: 'Monterey Bay, California',
-    title: 'Pacific Coast Escape',
-    body: `Back on the California coast — their pace slowed, the ocean breeze cool and salty. Monterey Bay offered tidepools, sea otters, and long drives along Highway 1. Quiet mornings and unhurried afternoons reminded them that the best adventures don't need a marquee.`,
-    photo: '/images/story/monterey.jpg',
-    photoAlt: 'Monterey Bay coastline',
+    city: 'San Francisco · London',
+    title: 'The Monthly Countdown',
+    body: `Long distance has a rhythm of its own. Every month, Jatin would pack a bag and fly to London — and every arrival felt like the first one. They found their routine in the quiet moments: morning walks through misty parks, iced mochas in hand even when London had other ideas about the weather, unhurried conversations that made the miles feel like nothing. It wasn't easy, but it was theirs.`,
+    photo: '/images/story/monthly-visits.jpg',
+    photoAlt: 'Morning coffee and walks in London',
   },
   {
     city: 'London, England',
