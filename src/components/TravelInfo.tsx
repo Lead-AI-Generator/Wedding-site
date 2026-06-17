@@ -18,42 +18,31 @@ export default function TravelInfo() {
             <div className="travel-card">
               <h5>Accommodation</h5>
 
+              <p className="travel-item-desc" style={{ marginBottom: '1.25rem' }}>
+                For accommodation recommendations and any group arrangements, please reach out directly
+                to the bride&apos;s or groom&apos;s family — they&apos;ll be happy to help point you
+                in the right direction.
+              </p>
+
               <div className="travel-item">
-                <p className="travel-item-title">Hyatt Regency Ahmedabad</p>
+                <p className="travel-item-title">El Dorado Ahmedabad</p>
                 <p className="travel-item-desc">
-                  Located centrally with great amenities.
+                  A well-regarded hotel offering comfortable rooms and convenient access to the city.
                 </p>
-                <a
-                  href="https://www.hyatt.com"
-                  className="travel-item-link"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Book a room →
-                </a>
               </div>
 
               <div className="travel-item">
-                <p className="travel-item-title">The House of MG</p>
+                <p className="travel-item-title">Taj Ahmedabad</p>
                 <p className="travel-item-desc">
-                  A heritage boutique hotel in the heart of the old city — stunning architecture and
-                  an intimate atmosphere. Perfect for those who want something unique.
+                  Iconic luxury in the heart of Ahmedabad, with world-class dining and service.
                 </p>
-                <a
-                  href="https://www.houseofmg.com"
-                  className="travel-item-link"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Learn more →
-                </a>
               </div>
 
               <div className="travel-item">
                 <p className="travel-item-title">ITC Narmada</p>
                 <p className="travel-item-desc">
-                  Luxury accommodation with excellent dining. Close to the venue and ideal for
-                  families travelling with young children.
+                  Luxury accommodation with excellent dining, ideal for families travelling with
+                  young children.
                 </p>
               </div>
             </div>
@@ -99,8 +88,8 @@ export default function TravelInfo() {
           style={{ fontSize: '0.82rem', letterSpacing: '0.05em' }}
         >
           Questions about travel? Reach us at{' '}
-          <a href="mailto:jatin.pandya531@gmail.com" style={{ color: 'var(--color-gold)' }}>
-            jatin.pandya531@gmail.com
+          <a href="mailto:becominghisjaanu@gmail.com" style={{ color: 'var(--color-gold)' }}>
+            becominghisjaanu@gmail.com
           </a>
         </p>
       </div>

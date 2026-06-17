@@ -26,7 +26,7 @@ const entries: StoryEntry[] = [
   {
     city: 'Budapest, Hungary',
     title: 'First Adventure Together',
-    body: `Their first trip together brought them to the grand boulevards and ruin bars of Budapest — a city that felt like a dream. Walking across the Chain Bridge at golden hour, discovering hidden courtyards, and sharing plates of food they couldn't pronounce: this was the trip that turned "maybe" into "definitely."`,
+    body: `Their first trip together brought them to the grand boulevards of Budapest — a city that felt like a dream. Walking across the Chain Bridge at golden hour, discovering hidden courtyards, and sharing plates of food they couldn't pronounce: this was the trip that turned "maybe" into "definitely."`,
     photo: '/images/story/budapest.jpg',
     photoAlt: 'Budapest — Chain Bridge at golden hour',
   },

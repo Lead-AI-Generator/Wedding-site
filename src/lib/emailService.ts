@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 
 const FROM = process.env.WEDDING_EMAIL_FROM || 'onboarding@resend.dev';
-const TO = process.env.WEDDING_EMAIL_TO || 'jatin.pandya531@gmail.com';
+const TO = process.env.WEDDING_EMAIL_TO || 'becominghisjaanu@gmail.com';
 
 const EVENT_LABELS: Record<string, string> = {
   haldi: 'Haldi (Dec 1 — Morning)',
