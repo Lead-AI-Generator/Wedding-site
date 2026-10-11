@@ -282,7 +282,7 @@ export default function RSVPForm() {
         {submitState === 'error' && (
           <div
             className="mb-3 text-center"
-            style={{ color: '#e07070', fontSize: '0.85rem' }}
+            style={{ color: '#C0392B', fontSize: '0.85rem' }}
           >
             Something went wrong — please try again or email us directly.
           </div>

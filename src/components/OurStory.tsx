@@ -69,7 +69,7 @@ function PhotoSlot({ src, alt }: { src: string; alt: string }) {
       <img
         src={src}
         alt={alt}
-        style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block', border: '1px solid rgba(201,168,76,0.3)' }}
+        style={{ width: '100%', height: '280px', objectFit: 'cover', display: 'block', border: '1px solid rgba(140,29,43,0.3)' }}
       />
     </div>
   );

@@ -72,7 +72,7 @@ export default async function AdminPage() {
         <div
           style={{
             background: 'var(--color-midnight-light)',
-            border: '1px solid rgba(201,168,76,0.2)',
+            border: '1px solid rgba(140,29,43,0.2)',
             padding: '2rem',
           }}
         >

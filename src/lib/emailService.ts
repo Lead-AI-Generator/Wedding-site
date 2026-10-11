@@ -45,45 +45,45 @@ Submitted: ${submitted}
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" /></head>
-<body style="font-family: Georgia, serif; background: #0D1B2A; color: #F5E6D3; padding: 32px; max-width: 600px; margin: 0 auto;">
-  <div style="border: 1px solid rgba(201,168,76,0.3); padding: 32px;">
-    <h1 style="font-size: 1.5rem; color: #C9A84C; letter-spacing: 0.1em; margin-bottom: 4px;">New RSVP</h1>
-    <p style="color: #9E8E7A; font-size: 0.85rem; margin-top: 0;">Jatin &amp; Anushi · December 3, 2026</p>
-    <hr style="border-color: rgba(201,168,76,0.2); margin: 20px 0;" />
+<body style="font-family: Georgia, serif; background: #F7EFE2; color: #2E1B14; padding: 32px; max-width: 600px; margin: 0 auto;">
+  <div style="border: 1px solid rgba(140,29,43,0.3); padding: 32px;">
+    <h1 style="font-size: 1.5rem; color: #8C1D2B; letter-spacing: 0.1em; margin-bottom: 4px;">New RSVP</h1>
+    <p style="color: #8A7A68; font-size: 0.85rem; margin-top: 0;">Jatin &amp; Anushi · December 3, 2026</p>
+    <hr style="border-color: rgba(140,29,43,0.2); margin: 20px 0;" />
 
     <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
       <tr>
-        <td style="color: #C9A84C; padding: 6px 0; width: 160px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Guest(s)</td>
-        <td style="padding: 6px 0; color: #F5E6D3;">${names}</td>
+        <td style="color: #8C1D2B; padding: 6px 0; width: 160px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Guest(s)</td>
+        <td style="padding: 6px 0; color: #2E1B14;">${names}</td>
       </tr>
       <tr>
-        <td style="color: #C9A84C; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Side</td>
-        <td style="padding: 6px 0; color: #F5E6D3;">${sideLabel}</td>
+        <td style="color: #8C1D2B; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Side</td>
+        <td style="padding: 6px 0; color: #2E1B14;">${sideLabel}</td>
       </tr>
       <tr>
-        <td style="color: #C9A84C; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Party Size</td>
-        <td style="padding: 6px 0; color: #F5E6D3;">${payload.guestCount} guest${payload.guestCount !== 1 ? 's' : ''}</td>
+        <td style="color: #8C1D2B; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Party Size</td>
+        <td style="padding: 6px 0; color: #2E1B14;">${payload.guestCount} guest${payload.guestCount !== 1 ? 's' : ''}</td>
       </tr>
       <tr>
-        <td style="color: #C9A84C; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; vertical-align: top;">Events</td>
-        <td style="padding: 6px 0; color: #F5E6D3;">
+        <td style="color: #8C1D2B; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; vertical-align: top;">Events</td>
+        <td style="padding: 6px 0; color: #2E1B14;">
           ${payload.events.map((e) => `<div>• ${EVENT_LABELS[e] ?? e}</div>`).join('')}
         </td>
       </tr>
       ${payload.dietaryNotes ? `
       <tr>
-        <td style="color: #C9A84C; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; vertical-align: top;">Dietary</td>
-        <td style="padding: 6px 0; color: #F5E6D3;">${payload.dietaryNotes}</td>
+        <td style="color: #8C1D2B; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; vertical-align: top;">Dietary</td>
+        <td style="padding: 6px 0; color: #2E1B14;">${payload.dietaryNotes}</td>
       </tr>` : ''}
       ${payload.email ? `
       <tr>
-        <td style="color: #C9A84C; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Guest Email</td>
-        <td style="padding: 6px 0; color: #F5E6D3;">${payload.email}</td>
+        <td style="color: #8C1D2B; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Guest Email</td>
+        <td style="padding: 6px 0; color: #2E1B14;">${payload.email}</td>
       </tr>` : ''}
     </table>
 
-    <hr style="border-color: rgba(201,168,76,0.2); margin: 20px 0;" />
-    <p style="color: #9E8E7A; font-size: 0.75rem;">Submitted: ${submitted}</p>
+    <hr style="border-color: rgba(140,29,43,0.2); margin: 20px 0;" />
+    <p style="color: #8A7A68; font-size: 0.75rem;">Submitted: ${submitted}</p>
   </div>
 </body>
 </html>
@@ -117,37 +117,37 @@ Jatin & Anushi
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" /></head>
-<body style="font-family: Georgia, serif; background: #0D1B2A; color: #F5E6D3; padding: 32px; max-width: 600px; margin: 0 auto;">
-  <div style="border: 1px solid rgba(201,168,76,0.3); padding: 32px;">
-    <h1 style="font-size: 1.5rem; color: #C9A84C; letter-spacing: 0.1em; margin-bottom: 4px;">You're on the list!</h1>
-    <p style="color: #9E8E7A; font-size: 0.85rem; margin-top: 0;">Jatin &amp; Anushi · December 3, 2026</p>
-    <hr style="border-color: rgba(201,168,76,0.2); margin: 20px 0;" />
+<body style="font-family: Georgia, serif; background: #F7EFE2; color: #2E1B14; padding: 32px; max-width: 600px; margin: 0 auto;">
+  <div style="border: 1px solid rgba(140,29,43,0.3); padding: 32px;">
+    <h1 style="font-size: 1.5rem; color: #8C1D2B; letter-spacing: 0.1em; margin-bottom: 4px;">You're on the list!</h1>
+    <p style="color: #8A7A68; font-size: 0.85rem; margin-top: 0;">Jatin &amp; Anushi · December 3, 2026</p>
+    <hr style="border-color: rgba(140,29,43,0.2); margin: 20px 0;" />
 
     <p style="line-height: 1.7; margin-bottom: 20px;">Hi ${payload.primaryGuest},</p>
     <p style="line-height: 1.7; margin-bottom: 20px;">We've received your RSVP and can't wait to celebrate with you. Here's a summary of what you registered for:</p>
 
     <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
       <tr>
-        <td style="color: #C9A84C; padding: 6px 0; width: 160px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; vertical-align: top;">Events</td>
-        <td style="padding: 6px 0; color: #F5E6D3;">
+        <td style="color: #8C1D2B; padding: 6px 0; width: 160px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; vertical-align: top;">Events</td>
+        <td style="padding: 6px 0; color: #2E1B14;">
           ${payload.events.map((e) => `<div>• ${EVENT_LABELS[e] ?? e}</div>`).join('')}
         </td>
       </tr>
       <tr>
-        <td style="color: #C9A84C; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Party Size</td>
-        <td style="padding: 6px 0; color: #F5E6D3;">${payload.guestCount} guest${payload.guestCount !== 1 ? 's' : ''}</td>
+        <td style="color: #8C1D2B; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;">Party Size</td>
+        <td style="padding: 6px 0; color: #2E1B14;">${payload.guestCount} guest${payload.guestCount !== 1 ? 's' : ''}</td>
       </tr>
       ${payload.dietaryNotes ? `
       <tr>
-        <td style="color: #C9A84C; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; vertical-align: top;">Dietary</td>
-        <td style="padding: 6px 0; color: #F5E6D3;">${payload.dietaryNotes}</td>
+        <td style="color: #8C1D2B; padding: 6px 0; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; vertical-align: top;">Dietary</td>
+        <td style="padding: 6px 0; color: #2E1B14;">${payload.dietaryNotes}</td>
       </tr>` : ''}
     </table>
 
-    <hr style="border-color: rgba(201,168,76,0.2); margin: 20px 0;" />
+    <hr style="border-color: rgba(140,29,43,0.2); margin: 20px 0;" />
     <p style="line-height: 1.7; margin-bottom: 0;">More details will follow closer to December. We're so excited to have you there.</p>
     <br />
-    <p style="color: #C9A84C; font-size: 0.85rem; letter-spacing: 0.15em;">WITH LOVE, JATIN &amp; ANUSHI</p>
+    <p style="color: #8C1D2B; font-size: 0.85rem; letter-spacing: 0.15em;">WITH LOVE, JATIN &amp; ANUSHI</p>
   </div>
 </body>
 </html>

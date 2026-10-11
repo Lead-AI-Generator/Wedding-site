@@ -50,7 +50,7 @@ function StarField() {
         const a = 0.3 + 0.5 * Math.abs(Math.sin(t * s.speed + s.phase));
         ctx.beginPath();
         ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(201,168,76,${a * 0.7})`;
+        ctx.fillStyle = `rgba(140,29,43,${a * 0.7})`;
         ctx.fill();
       }
       animId = requestAnimationFrame(draw);

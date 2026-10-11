@@ -39,10 +39,9 @@ export default function TravelInfo() {
               </div>
 
               <div className="travel-item">
-                <p className="travel-item-title">ITC Narmada</p>
+                <p className="travel-item-title">Regenta Central Antarim Hotel</p>
                 <p className="travel-item-desc">
-                  Luxury accommodation with excellent dining, ideal for families travelling with
-                  young children.
+                  Contemporary 4-star business and leisure hotel located in the heart of Ahmedabad, Gujarat
                 </p>
               </div>
             </div>

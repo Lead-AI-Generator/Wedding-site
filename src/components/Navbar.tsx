@@ -61,8 +61,9 @@ export default function NavBar() {
         <div
           className="d-md-none"
           style={{
-            background: 'rgba(13,27,42,0.98)',
-            borderTop: '1px solid rgba(201,168,76,0.2)',
+            background: 'rgba(247,239,226,0.98)',
+            borderTop: '1px solid rgba(140,29,43,0.2)',
+            boxShadow: '0 8px 24px rgba(46,27,20,0.12)',
             padding: '1.5rem',
           }}
         >

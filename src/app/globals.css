@@ -1,16 +1,16 @@
 /* ─── Design Tokens ─────────────────────────────────────────────────────── */
 :root {
-  --color-midnight: #0D1B2A;
-  --color-midnight-light: #162033;
-  --color-gold: #C9A84C;
-  --color-gold-dark: #8B6914;
-  --color-gold-light: #E2C97E;
-  --color-ivory: #FAF7F2;
-  --color-ivory-dark: #F0EAE0;
-  --color-cream-text: #F5E6D3;
+  --color-midnight: #F7EFE2;
+  --color-midnight-light: #EEE0C8;
+  --color-gold: #8C1D2B;
+  --color-gold-dark: #5E131D;
+  --color-gold-light: #C96B6B;
+  --color-ivory: #FFFBF2;
+  --color-ivory-dark: #F0E4D1;
+  --color-cream-text: #2E1B14;
   --color-dark-text: #2A1A0E;
-  --color-champagne: #E8D5B0;
-  --color-muted: #9E8E7A;
+  --color-champagne: #5B4636;
+  --color-muted: #8A7A68;
 
   --font-display: var(--font-cinzel), 'Cinzel', serif;
   --font-heading: var(--font-cormorant), 'Cormorant Garamond', serif;
@@ -225,9 +225,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .wedding-nav.scrolled {
-  background: rgba(13, 27, 42, 0.97) !important;
+  background: rgba(247, 239, 226, 0.97) !important;
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 rgba(201, 168, 76, 0.2);
+  box-shadow: 0 1px 0 rgba(140, 29, 43, 0.2);
   padding: 0.75rem 0;
 }
 
@@ -278,7 +278,7 @@ h1, h2, h3, h4, h5 {
 .nav-rsvp-btn:hover {
   background: var(--color-gold-dark);
   border-color: var(--color-gold-dark);
-  color: var(--color-cream-text) !important;
+  color: var(--color-ivory) !important;
 }
 
 /* ─── Our Story Section ──────────────────────────────────────────────────── */
@@ -372,13 +372,13 @@ h1, h2, h3, h4, h5 {
   flex: 1;
   min-width: 0;
   background: var(--color-midnight-light);
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  border: 1px solid rgba(140, 29, 43, 0.2);
   padding: 2rem;
   transition: border-color var(--transition);
 }
 
 .story-content:hover {
-  border-color: rgba(201, 168, 76, 0.5);
+  border-color: rgba(140, 29, 43, 0.5);
 }
 
 .story-photo {
@@ -397,7 +397,7 @@ h1, h2, h3, h4, h5 {
   width: 100%;
   height: 280px;
   object-fit: cover;
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  border: 1px solid rgba(140, 29, 43, 0.3);
   display: block;
 }
 
@@ -405,7 +405,7 @@ h1, h2, h3, h4, h5 {
   width: 100%;
   height: 280px;
   background: var(--color-midnight-light);
-  border: 1px dashed rgba(201, 168, 76, 0.3);
+  border: 1px dashed rgba(140, 29, 43, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -439,7 +439,7 @@ h1, h2, h3, h4, h5 {
 
 /* ─── Events Section ─────────────────────────────────────────────────────── */
 .event-card {
-  border: 1px solid rgba(201, 168, 76, 0.25);
+  border: 1px solid rgba(140, 29, 43, 0.25);
   background: var(--color-midnight-light);
   padding: 2.5rem 2rem;
   text-align: center;
@@ -492,7 +492,7 @@ h1, h2, h3, h4, h5 {
 .event-note {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  border-top: 1px solid rgba(140, 29, 43, 0.2);
   font-size: 0.8rem;
   color: var(--color-muted);
   font-style: italic;
@@ -501,7 +501,7 @@ h1, h2, h3, h4, h5 {
 /* ─── Travel Section ─────────────────────────────────────────────────────── */
 .travel-card {
   background: var(--color-midnight);
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  border: 1px solid rgba(140, 29, 43, 0.2);
   padding: 2rem;
   height: 100%;
 }
@@ -517,7 +517,7 @@ h1, h2, h3, h4, h5 {
 
 .travel-item {
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+  border-bottom: 1px solid rgba(140, 29, 43, 0.1);
 }
 
 .travel-item:last-child {
@@ -562,7 +562,7 @@ h1, h2, h3, h4, h5 {
 
 .rsvp-form-wrap {
   background: var(--color-midnight-light);
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  border: 1px solid rgba(140, 29, 43, 0.2);
   padding: 3rem;
   max-width: 640px;
   margin: 0 auto;
@@ -586,7 +586,7 @@ h1, h2, h3, h4, h5 {
 
 .form-control-wedding {
   background: var(--color-midnight) !important;
-  border: 1px solid rgba(201, 168, 76, 0.3) !important;
+  border: 1px solid rgba(140, 29, 43, 0.3) !important;
   color: var(--color-cream-text) !important;
   border-radius: 0 !important;
   font-family: var(--font-body) !important;
@@ -597,7 +597,7 @@ h1, h2, h3, h4, h5 {
 
 .form-control-wedding:focus {
   border-color: var(--color-gold) !important;
-  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.15) !important;
+  box-shadow: 0 0 0 2px rgba(140, 29, 43, 0.15) !important;
   outline: none !important;
 }
 
@@ -610,14 +610,14 @@ h1, h2, h3, h4, h5 {
   align-items: flex-start;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
-  border: 1px solid rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(140, 29, 43, 0.15);
   margin-bottom: 0.5rem;
   cursor: pointer;
   transition: border-color var(--transition);
 }
 
 .form-check-wedding:hover {
-  border-color: rgba(201, 168, 76, 0.4);
+  border-color: rgba(140, 29, 43, 0.4);
 }
 
 .form-check-wedding input[type="checkbox"],
@@ -639,7 +639,7 @@ h1, h2, h3, h4, h5 {
 
 .form-error {
   font-size: 0.75rem;
-  color: #e07070;
+  color: #C0392B;
   margin-top: 0.35rem;
   display: block;
 }
@@ -663,7 +663,7 @@ h1, h2, h3, h4, h5 {
 
 .btn-gold:hover {
   background: var(--color-gold-dark);
-  color: var(--color-cream-text);
+  color: var(--color-ivory);
 }
 
 .btn-gold:disabled {
@@ -702,7 +702,7 @@ h1, h2, h3, h4, h5 {
 
 .stat-card {
   background: var(--color-midnight-light);
-  border: 1px solid rgba(201, 168, 76, 0.2);
+  border: 1px solid rgba(140, 29, 43, 0.2);
   padding: 1.5rem;
   text-align: center;
   height: 100%;
@@ -737,20 +737,20 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-gold);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  border-bottom: 1px solid rgba(140, 29, 43, 0.3);
   padding: 0.75rem 1rem;
   text-align: left;
 }
 
 .rsvp-table td {
   padding: 0.875rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(46, 27, 20, 0.08);
   color: var(--color-champagne);
   vertical-align: top;
 }
 
 .rsvp-table tr:hover td {
-  background: rgba(201, 168, 76, 0.04);
+  background: rgba(140, 29, 43, 0.04);
 }
 
 .badge-side {
@@ -763,21 +763,21 @@ h1, h2, h3, h4, h5 {
 }
 
 .badge-bride {
-  background: rgba(201, 168, 76, 0.15);
+  background: rgba(140, 29, 43, 0.15);
   color: var(--color-gold);
-  border: 1px solid rgba(201, 168, 76, 0.4);
+  border: 1px solid rgba(140, 29, 43, 0.4);
 }
 
 .badge-groom {
-  background: rgba(245, 230, 211, 0.1);
-  color: var(--color-cream-text);
-  border: 1px solid rgba(245, 230, 211, 0.3);
+  background: rgba(91, 70, 54, 0.1);
+  color: var(--color-champagne);
+  border: 1px solid rgba(91, 70, 54, 0.3);
 }
 
 /* ─── Footer ─────────────────────────────────────────────────────────────── */
 .wedding-footer {
   background: var(--color-midnight);
-  border-top: 1px solid rgba(201, 168, 76, 0.15);
+  border-top: 1px solid rgba(140, 29, 43, 0.15);
   padding: 3rem 0;
   text-align: center;
   color: var(--color-muted);
@@ -815,7 +815,7 @@ h1, h2, h3, h4, h5 {
 
 /* Override Bootstrap form controls to match theme */
 .form-control:focus {
-  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(140, 29, 43, 0.2) !important;
 }
 
 /* Fix Bootstrap navbar toggler on dark bg */
